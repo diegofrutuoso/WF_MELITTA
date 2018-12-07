@@ -24,7 +24,8 @@ sap.ui.jsview("workflowdemo.ListPurchaseOrderApproval", {
 				 new sap.m.StandardListItem({
 					title: "{fornecedor}",
 					description: " Venct " + "{vencto}" + "  -  R$" + "{valor}",
-					type: sap.m.ListType.Navigation
+					type: sap.m.ListType.Navigation,
+					press: [oController.handleItemPress, oController]
 				})
 		);
 		
