@@ -30,11 +30,38 @@ sap.ui.jsview("workflowdemo.MainPage", {
 				})],
 			contentRight: []
 		});
+				
+		var oNum = new sap.m.NumericContent({
+			size:"S",
+			scale:"Ped",
+			value:"17",
+			icon:"sap-icon://locked",
+			valueColor:"Good",
+			indicator:"Up"
+		});
+		
+		var oCont = new sap.m.TileContent({
+			footer: "Ped. Compras",
+			content:[
+				oNum
+			]
+		});
+		
+		var oGenericTile = new sap.m.GenericTile({
+			header: "Aprovações Pendentes",
+			size: "S",
+			frameType:"OneByOne",
+			press:[oController.press, oController],
+			tileContent: [
+				oCont
+			]
+		});
+		
 		
  		var oPage = new sap.m.Page({
 			title: "Aprovações",
 			content: [
-			
+				oGenericTile
 			]
 		});
  		
