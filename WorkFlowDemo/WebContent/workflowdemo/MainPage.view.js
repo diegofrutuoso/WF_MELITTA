@@ -16,10 +16,10 @@ sap.ui.jsview("workflowdemo.MainPage", {
 		
 		var oBar = new sap.m.Bar({
 			contentLeft: [ 
-//				new sap.m.Button({
-//				text: "Voltar",
-//				type: sap.m.ButtonType.Back
-//			})
+				new sap.m.Button({
+				text: "Voltar",
+				type: sap.m.ButtonType.Back
+			})
 				
 			],
 			contentMiddle: [
