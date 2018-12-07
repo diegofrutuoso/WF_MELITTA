@@ -1,0 +1,95 @@
+sap.ui.jsview("demobasictile.BasicTile", {
+
+	/** Specifies the Controller belonging to this View. 
+	* In the case that it is not implemented, or that "null" is returned, this View does not have a Controller.
+	* @memberOf demobasictile.BasicTile
+	*/ 
+	getControllerName : function() {
+		return "demobasictile.BasicTile";
+	},
+
+	/** Is initially called once after the Controller has been instantiated. It is the place where the UI is constructed. 
+	* Since the Controller is given to this method, its event handlers can be attached right away. 
+	* @memberOf demobasictile.BasicTile
+	*/ 
+	createContent : function(oController) {
+		
+//		var oT1 = new sap.m.StandardTile({
+//			title:"Dinossauro",
+//			info: "Montanha",
+//			icon: "sap-icon://inventory"
+//		});
+//		
+//		var oT2 = new sap.m.StandardTile({
+//			title:"Dragão",
+//			info: "Caverna",
+//			icon: "sap-icon://jam"
+//		});
+//		
+//		var oT3 = new sap.m.StandardTile({
+//			title:"Fênix",
+//			info: "Escritório",
+//			icon: "sap-icon://key"
+//		});
+//		
+//		var oT4 = new sap.m.StandardTile({
+//			title:"Centauro",
+//			info: "Moema",
+//			icon: "sap-icon://lateness"
+//		});
+		
+		var oTemp = new sap.m.StandardTile({
+			icon:"{icon}",
+			title: "{Name}",
+			info: "{Place}"
+		});
+		
+		var oTileContainer = new sap.m.TileContainer({
+//			tiles:[
+//				oT1,
+//				oT2,
+//				oT3,
+//				oT4
+//			]
+		});
+		
+		var oTileContainer.bindAggregation("tiles", "/lista");
+		
+		var oNum = new sap.m.NumericContent({
+			size:"S",
+			scale:"Ped",
+			value:"17",
+			icon:"sap-icon://locked",
+			valueColor:"Good",
+			indicator:"Up"
+		});
+		
+		var oCont = new sap.m.TileContent({
+			footer: "Ped. Compras",
+			content:[
+				oNum
+			]
+		});
+		
+		var oGenericTile = new sap.m.GenericTile({
+			header: "Aprovações Pendentes",
+			size: "S",
+			frameType:"OneByOne",
+			press:[oController.press, oController],
+			tileContent: [
+				oCont
+			]
+		});
+		
+ 		var oPage = new sap.m.Page({
+			title: "Title",
+			content: [
+				oGenericTile,
+				oTileContainer
+			]
+		});
+ 		
+ 		return oPage;
+	}
+
+});
