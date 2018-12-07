@@ -6,6 +6,7 @@
 
 		<script src="https://sapui5.netweaver.ondemand.com/resources/sap-ui-cachebuster/sap-ui-core.js"
 				id="sap-ui-bootstrap"
+				data-sap-ui-xx-bindingSyntax="complex"
 				data-sap-ui-libs="sap.m, sap.ui.commons"
 				data-sap-ui-theme="sap_bluecrystal">
 		</script>
@@ -14,8 +15,10 @@
 		<script>
 				sap.ui.localResources("workflowdemo");
 				var app = new sap.m.App({initialPage:"idMainPage1"});
-				var page = sap.ui.view({id:"idMainPage1", viewName:"workflowdemo.MainPage", type:sap.ui.core.mvc.ViewType.JS});
+				var page    = sap.ui.view({id:"idMainPage1", viewName:"workflowdemo.MainPage", type:sap.ui.core.mvc.ViewType.JS});
+				var pageLPC = sap.ui.view({id:"idListPage", viewName:"workflowdemo.ListPurchaseOrderApproval", type:sap.ui.core.mvc.ViewType.JS});
 				app.addPage(page);
+				app.addPage(pageLPC);
 				app.placeAt("content");
 		</script>
 
