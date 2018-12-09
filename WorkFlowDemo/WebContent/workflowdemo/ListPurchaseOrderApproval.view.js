@@ -17,18 +17,16 @@ sap.ui.jsview("workflowdemo.ListPurchaseOrderApproval", {
 		var oList = new sap.m.List({
 			headerText:"Pendentes",
 			swipeContent: [
+//				new sap.m.Button({
+//					type: "Reject",
+//					icon: "sap-icon://decline",
+//					press: [oController.handleRej, oController]
+//				}),
 				new sap.m.Button({
-//					text: "Reprovar",
-					type: "Reject",
-					icon: "sap-icon://decline",
-					press: [oController.handleRej, oController]
-				}),
-				new sap.m.Button({
-//					text: "Reprovar",
 					type: "Accept",
 					icon: "sap-icon://accept",
 					press: [oController.handleAce, oController]
-				}),
+				})
 			]
 		});
 		

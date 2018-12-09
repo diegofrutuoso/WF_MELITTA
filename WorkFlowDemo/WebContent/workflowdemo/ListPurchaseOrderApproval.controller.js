@@ -139,7 +139,22 @@ sap.ui.controller("workflowdemo.ListPurchaseOrderApproval", {
 	
 	handleAce: function (evt) {
 		var oList = evt.getSource().getParent();
-		oList.removeAggregation("items", oList.getSwipedItem());
+		
+		var oItem = oList.getSwipedItem();
+		
+		var model = sap.ui.getCore().getModel();
+		
+		var sIdx = oItem.sId;
+		
+		sIdx = sIdx.substring(sIdx.indexOf("list0-")+ 6);
+		
+		sIdx = sIdx;
+		
+		model.oData.itens.splice(sIdx,1);
+		
+//		oList.removeAggregation("items", oList.getSwipedItem());
+		
+		model.refresh();
 		oList.swipeOut();
 		
 		sap.m.MessageToast.show("Pedido Aprovado",{
