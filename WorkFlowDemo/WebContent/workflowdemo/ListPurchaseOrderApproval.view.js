@@ -15,7 +15,13 @@ sap.ui.jsview("workflowdemo.ListPurchaseOrderApproval", {
 	createContent : function(oController) {
 		
 		var oList = new sap.m.List({
-			headerText:"Pendentes"
+			headerText:"Pendentes",
+			swipeContent: [
+				new sap.m.Button({
+					text: "Reprovar",
+					type: "Reject"
+				})
+			]
 		});
 		
 		oList.bindAggregation(

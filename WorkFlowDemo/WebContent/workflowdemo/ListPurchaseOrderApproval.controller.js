@@ -103,10 +103,24 @@ sap.ui.controller("workflowdemo.ListPurchaseOrderApproval", {
 	},
 	
 	handleItemPress: function (oEvt) {
+			
 	 	var selectedPC = oEvt.getSource().getBindingContext();
 	 	
-	 	var oDetails = sap.ui.getCore().byId("idDetails");
+	 	var oList = sap.ui.getCore().byId("idListPedComp");
+	 	var pathList = selectedPC.sPath + "/produtos";
 	 	
+
+		var oItem = new sap.m.StandardListItem({
+			title: "{material}",
+			description: "Qtd: " + "{quantidade}",
+		});
+	 	
+	 	oList.bindAggregation("items", {
+	 	    path : pathList,
+	 	    template: oItem
+	 	});
+	 	
+	 	var oDetails = sap.ui.getCore().byId("idDetails");
 	 	oDetails.bindElement({ path: selectedPC.sPath });
 	 	
 	 	app.to("idDetails");

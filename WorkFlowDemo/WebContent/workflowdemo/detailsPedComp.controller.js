@@ -1,5 +1,23 @@
 sap.ui.controller("workflowdemo.detailsPedComp", {
 
+	handleReprovar: function(oEvt){
+		sap.m.MessageToast.show("Pedido Reprovado",{
+			my: "center center",
+			at: "center center"
+		});
+		
+		app.back();
+	},
+
+	handleAprovar: function(oEvt){
+		sap.m.MessageToast.show("Pedido Aprovado",{
+			my: "center center",
+			at: "center center"
+		});
+		
+		app.back();
+	},
+	
 /**
 * Called when a controller is instantiated and its View controls (if available) are already created.
 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
