@@ -18,6 +18,8 @@ sap.ui.controller("workflowdemo.detailsPedComp", {
 		
 		model.oData.itens.splice(idx,1);
 		
+		model.oData.total = model.oData.total - 1;
+		
 		model.refresh();
 
 		app.back();
@@ -40,6 +42,8 @@ sap.ui.controller("workflowdemo.detailsPedComp", {
 		idx = idx.match(/[0-9]+/g);
 		
 		model.oData.itens.splice(idx,1);
+
+		model.oData.total = model.oData.total - 1;
 		
 		model.refresh();
 

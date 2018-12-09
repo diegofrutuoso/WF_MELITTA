@@ -30,11 +30,13 @@ sap.ui.jsview("workflowdemo.MainPage", {
 				})],
 			contentRight: []
 		});
+		
+		var numero = "3";
 				
-		var oNum = new sap.m.NumericContent({
+		var oNum = new sap.m.NumericContent("idTile",{
 			size:"S",
 			scale:"Ped",
-			value:"3",
+			value: "{total}",
 			icon:"sap-icon://locked",
 			valueColor:"Good",
 			indicator:"Up"
@@ -56,7 +58,6 @@ sap.ui.jsview("workflowdemo.MainPage", {
 				oCont
 			]
 		});
-		
 		
  		var oPage = new sap.m.Page({
 			title: "Aprovações",

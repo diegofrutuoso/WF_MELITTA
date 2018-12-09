@@ -5,9 +5,14 @@ sap.ui.controller("workflowdemo.MainPage", {
 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
 * @memberOf workflowdemo.MainPage
 */
-//	onInit: function() {
-//
-//	},
+	onInit: function() {
+		var oModel = new sap.ui.model.json.JSONModel("json/dados.json");
+				
+		sap.ui.getCore().setModel(oModel);
+		
+		var oTile = sap.ui.getCore().byId("idTile");
+		oTile.bindElement({ path: "/" });
+	},
 
 /**
 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered

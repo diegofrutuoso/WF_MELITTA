@@ -93,13 +93,6 @@ sap.ui.controller("workflowdemo.ListPurchaseOrderApproval", {
 //				]
 //			}
 		
-		var oModel = new sap.ui.model.json.JSONModel("json/dados.json");
-//		oModel.setData(oData);
-		
-//		oModel.loadData("./json/dados.json");
-		
-		sap.ui.getCore().setModel(oModel);
-		
 	},
 	
 	handleItemPress: function (oEvt) {
@@ -152,7 +145,7 @@ sap.ui.controller("workflowdemo.ListPurchaseOrderApproval", {
 		
 		model.oData.itens.splice(sIdx,1);
 		
-//		oList.removeAggregation("items", oList.getSwipedItem());
+		model.oData.total = model.oData.total - 1;
 		
 		model.refresh();
 		oList.swipeOut();
