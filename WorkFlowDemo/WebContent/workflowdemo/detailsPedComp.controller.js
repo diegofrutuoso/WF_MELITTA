@@ -6,6 +6,20 @@ sap.ui.controller("workflowdemo.detailsPedComp", {
 			at: "center center"
 		});
 		
+		var myPath = this.getView().getBindingContext().getPath();
+		
+		var model = sap.ui.getCore().getModel();
+		
+		var obj = model.getObject(myPath);
+		
+		var idx = myPath;
+		
+		idx = idx.match(/[0-9]+/g);
+		
+		model.oData.itens.splice(idx,1);
+		
+		model.refresh();
+
 		app.back();
 	},
 
@@ -15,6 +29,20 @@ sap.ui.controller("workflowdemo.detailsPedComp", {
 			at: "center center"
 		});
 		
+		var myPath = this.getView().getBindingContext().getPath();
+		
+		var model = sap.ui.getCore().getModel();
+		
+		var obj = model.getObject(myPath);
+		
+		var idx = myPath;
+		
+		idx = idx.match(/[0-9]+/g);
+		
+		model.oData.itens.splice(idx,1);
+		
+		model.refresh();
+
 		app.back();
 	},
 	

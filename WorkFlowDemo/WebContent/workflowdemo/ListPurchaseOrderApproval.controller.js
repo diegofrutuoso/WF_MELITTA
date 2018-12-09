@@ -124,7 +124,29 @@ sap.ui.controller("workflowdemo.ListPurchaseOrderApproval", {
 	 	oDetails.bindElement({ path: selectedPC.sPath });
 	 	
 	 	app.to("idDetails");
-	}
+	},
+	
+	handleRej: function (evt) {
+		var oList = evt.getSource().getParent();
+		oList.removeAggregation("items", oList.getSwipedItem());
+		oList.swipeOut();
+		
+		sap.m.MessageToast.show("Pedido Reprovado",{
+			my: "center center",
+			at: "center center"
+		});
+	},
+	
+	handleAce: function (evt) {
+		var oList = evt.getSource().getParent();
+		oList.removeAggregation("items", oList.getSwipedItem());
+		oList.swipeOut();
+		
+		sap.m.MessageToast.show("Pedido Aprovado",{
+			my: "center center",
+			at: "center center"
+		});
+	}	
 	
 /**
 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered

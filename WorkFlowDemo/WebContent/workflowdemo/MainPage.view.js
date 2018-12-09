@@ -34,7 +34,7 @@ sap.ui.jsview("workflowdemo.MainPage", {
 		var oNum = new sap.m.NumericContent({
 			size:"S",
 			scale:"Ped",
-			value:"17",
+			value:"3",
 			icon:"sap-icon://locked",
 			valueColor:"Good",
 			indicator:"Up"
